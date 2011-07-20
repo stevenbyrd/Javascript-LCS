@@ -1,0 +1,11 @@
+StrComp.js contains a function (inefficient, but readable) called "compare(s0, s1)" which takes two
+strings and calculates the longest common substring of the two. The results are stored in two variables,
+"str0Highlights" and "str1Highlights", which are the two original strings with HTML tags inserted to
+highlight the differences between the two. So far the maximum length of the strings to be compared seems
+to be ~150, but this number varies a great deal depending on where the differences occur in the strings.
+If the last word in each string is the same, for instance, then the amount of work done to calculate the
+LCS is reduced by about half (I think, I haven't thought about it very critically). Potential optimizations
+could include breaking the strings up by sentence rather than by word, and I've toyed around with the idea
+of reversing the strings at various points in the computation in hopes of "hacking away" at them from both
+ends when there is an instance of the first word matching but the last word *not* matching... but this idea
+may be fundamentally flawed, and I haven't had time to play with it.
